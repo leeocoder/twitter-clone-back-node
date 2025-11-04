@@ -1,20 +1,38 @@
 {
   "name": "twitter-clone-back-node",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "type": "module",
+  "description": "Backend for Twitter Clone built with Node.js + Express + TypeScript (ESM).",
+  "main": "dist/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node --import=tsx --watch --env-file=.env ./src/server.ts",
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "lint": "eslint . --ext .ts --fix"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/leeocoder/twitter-clone-back-node.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["node", "express", "typescript", "api", "twitter-clone"],
+  "author": "Leonardo Albuquerque",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/leeocoder/twitter-clone-back-node/issues"
   },
-  "homepage": "https://github.com/leeocoder/twitter-clone-back-node#readme"
+  "homepage": "https://github.com/leeocoder/twitter-clone-back-node#readme",
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.5",
+    "@types/node": "^22.10.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
 }
